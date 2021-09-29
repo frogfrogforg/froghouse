@@ -1,0 +1,2 @@
+- [skybox shader](https://github.com/johanar/godot-skybox-shader) by johanar, [mit](https://mit-license.org/)
+- [star nest](https://www.shadertoy.com/view/XlfGRj) by pablo roman andrioli, [mit](https://mit-license.org/)
