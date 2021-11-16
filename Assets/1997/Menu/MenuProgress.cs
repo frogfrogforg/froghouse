@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace Frog1997 {
 
-/// the menu
+/// a menu progress bar
 public class MenuProgress : MonoBehaviour {
     // -- nodes --
     [Header("nodes")]
@@ -25,11 +25,10 @@ public class MenuProgress : MonoBehaviour {
         m_Mask.padding = p;
     }
 
-    // -- props/hot --
-    /// the current percent complete
-    public float Pct {
-        get => m_Pct;
-        set => m_Pct = value;
+    // -- commands --
+    /// set the current percent complete
+    public void Set(float pct) {
+        m_Pct = pct;
     }
 }
 
