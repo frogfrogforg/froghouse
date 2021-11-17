@@ -3,13 +3,21 @@ using UnityEngine;
 namespace Frog1997 {
 
 /// the menu
-public class Menu : MonoBehaviour {
+public class Menu: MonoBehaviour {
     // -- deps --
     /// a reference to frog
     Frog m_Frog;
 
+    // -- tuning --
+    [Header("tuning")]
+    [Tooltip("the cursor offset from the action")]
+    [SerializeField] Vector2 m_CursorOffset = new Vector2(-10.0f, 0.0f);
+
     // -- nodes --
     [Header("nodes")]
+    [Tooltip("the root transform")]
+    [SerializeField] RectTransform m_Root;
+
     [Tooltip("the hp val")]
     [SerializeField] MenuVal m_Hp;
 
@@ -22,8 +30,11 @@ public class Menu : MonoBehaviour {
     [Tooltip("the limit progress bar")]
     [SerializeField] MenuProgress m_Limit;
 
+    [Tooltip("the cursor")]
+    [SerializeField] RectTransform m_Cursor;
+
     [Tooltip("the actions")]
-    [SerializeField] GameObject m_Actions;
+    [SerializeField] MenuActions m_Actions;
 
     // -- lifecycle --
     void Start() {
@@ -33,6 +44,7 @@ public class Menu : MonoBehaviour {
 
     void Update() {
         SyncFrog();
+        SyncCursor();
     }
 
     // -- commands --
@@ -42,7 +54,33 @@ public class Menu : MonoBehaviour {
         m_Mp.Set(m_Frog.Mp);
         m_Act.Set(m_Frog.ActPct);
         m_Limit.Set(m_Frog.LimitPct);
-        m_Actions.SetActive(m_Frog.ActPct >= 1.0f);
+        m_Actions.IsVisible = m_Frog.ActPct >= 1.0f;
+    }
+
+    /// update ui with the selected action
+    void SyncCursor() {
+        // find the action
+        var action = m_Actions.FindSelected();
+
+        // update cursor visibility
+        var isVisible = action != null;
+        m_Cursor.SetActive(isVisible);
+
+        // if visible
+        if (!isVisible) {
+            return;
+        }
+
+        // move it into position
+        if (m_Cursor.parent != action) {
+            m_Cursor.SetParent(action, false);
+
+            var pc = Vector2.zero;
+            pc += m_CursorOffset;
+            pc.x -= m_Cursor.rect.width;
+
+            m_Cursor.anchoredPosition = pc;
+        }
     }
 }
 
