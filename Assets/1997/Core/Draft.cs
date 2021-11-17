@@ -13,7 +13,7 @@ public struct Draft<T> where T: IEquatable<T> {
 
     // -- lifetime --
     /// create a draft with an initial value
-    public Draft(T value) {
+    public Draft(T value = default) {
         m_Value = value;
         m_IsDirty = false;
     }
@@ -33,6 +33,7 @@ public struct Draft<T> where T: IEquatable<T> {
     public bool IsDirty {
         get => m_IsDirty;
     }
+
 }
 
 }
