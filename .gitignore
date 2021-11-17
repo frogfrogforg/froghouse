@@ -33,6 +33,9 @@ Screens
 # Visual Studio cache directory
 .vs/
 
+# fran uses vscode 
+.vscode/
+
 # Gradle cache directory
 .gradle/
 
