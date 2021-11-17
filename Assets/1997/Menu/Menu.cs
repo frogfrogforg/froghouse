@@ -22,6 +22,9 @@ public class Menu : MonoBehaviour {
     [Tooltip("the limit progress bar")]
     [SerializeField] MenuProgress m_Limit;
 
+    [Tooltip("the actions")]
+    [SerializeField] GameObject m_Actions;
+
     // -- lifecycle --
     void Start() {
         // set deps
@@ -39,6 +42,7 @@ public class Menu : MonoBehaviour {
         m_Mp.Set(m_Frog.Mp);
         m_Act.Set(m_Frog.ActPct);
         m_Limit.Set(m_Frog.LimitPct);
+        m_Actions.SetActive(m_Frog.ActPct >= 1.0f);
     }
 }
 
