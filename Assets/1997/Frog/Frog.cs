@@ -48,6 +48,11 @@ public class Frog: MonoBehaviour {
     }
 
     // -- commands --
+    /// perform an action
+    public void Perform(FrogAction action) {
+        Debug.Log($"this frog is ready to {action.Label}!");
+    }
+
     /// update any periodic stats
     void Tick() {
         var t = Time.deltaTime;
