@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityAtoms.BaseAtoms;
 
 namespace Frog2009
 {
@@ -8,6 +9,20 @@ namespace Frog2009
     public class TopFrogMovement : MonoBehaviour
     {
         public float DiveSpeed = 10;
+        public Transform StartReference;
+        public Transform UnderwaterReference;
+
+        private bool canGoUp => transform.position.y < StartReference.position.y;
+
+        private bool isUnderwater => transform.position.y < UnderwaterReference.position.y;
+
+
+        [SerializeField]
+        private BoolReference IsThisFrogUnderwater;
+
+        [SerializeField]
+        private BoolReference _IsOtherFrogUnderwater;
+
         private bool _showingSign = false;
         private bool showingSign
         {
@@ -32,16 +47,29 @@ namespace Frog2009
         // Update is called once per frame
         void Update()
         {
+            if (_IsOtherFrogUnderwater.Value) return;
             var position = transform.position;
-            if (Input.GetKeyDown(KeyCode.S))
+            if (!isUnderwater)
             {
-                position += Vector3.down * DiveSpeed * Time.deltaTime;
+                if (Input.GetKey(KeyCode.S))
+                {
+                    position += Vector3.down * DiveSpeed * Time.deltaTime;
+                }
+
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    showingSign = !showingSign;
+                }
             }
 
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (canGoUp && Input.GetKey(KeyCode.W))
             {
-                showingSign = !showingSign;
+                position += Vector3.up * DiveSpeed * Time.deltaTime;
             }
+
+            IsThisFrogUnderwater.Value = isUnderwater;
+
+            transform.position = position;
         }
     }
 }
