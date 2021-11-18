@@ -60,9 +60,9 @@ public class Menu: MonoBehaviour {
     /// update ui with the selected action
     void SyncCursor() {
         // find the action
-        var action = m_Actions.FindSelected();
+        var action = m_Actions.FindSelectedRect();
 
-        // update cursor visibility
+        // set cursor visibility
         var isVisible = action != null;
         m_Cursor.SetActive(isVisible);
 
@@ -71,16 +71,25 @@ public class Menu: MonoBehaviour {
             return;
         }
 
-        // move it into position
-        if (m_Cursor.parent != action) {
-            m_Cursor.SetParent(action, false);
-
-            var pc = Vector2.zero;
-            pc += m_CursorOffset;
-            pc.x -= m_Cursor.rect.width;
-
-            m_Cursor.anchoredPosition = pc;
+        // and the parent changed
+        if (m_Cursor.parent == action) {
+            return;
         }
+
+        // move it into position
+        m_Cursor.SetParent(action, false);
+
+        var pc = Vector2.zero;
+        pc += m_CursorOffset;
+        pc.x -= m_Cursor.rect.width;
+
+        m_Cursor.anchoredPosition = pc;
+    }
+
+    // -- events --
+    /// when an action is selected
+    public void OnSelect(FrogAction data) {
+        m_Frog.Perform(data);
     }
 }
 
