@@ -28,7 +28,7 @@ public class CameraController : MonoBehaviour {
      
         var currentPosition = transform.position;
         turn.x+=Input.GetAxis("Mouse Y");
-        transform.localRotation=Quaternion.Euler(-turn.x+10,0,0);
+        transform.localRotation=Quaternion.Euler(-turn.x+20,0,0);
 
        // var targetPosition = new Vector3(target.position.x, yPos + target.position.y, target.position.z + zOffset);
        // transform.position = Vector3.Lerp(currentPosition, targetPosition, Time.deltaTime * lerpSpeed);
