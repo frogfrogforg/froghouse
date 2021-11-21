@@ -89,7 +89,9 @@ public class Menu: MonoBehaviour {
     // -- events --
     /// when an action is selected
     public void OnSelect(FrogAction data) {
-        m_Frog.Perform(data);
+        if (m_Frog.IsActReady) {
+            m_Frog.Act(data);
+        }
     }
 }
 

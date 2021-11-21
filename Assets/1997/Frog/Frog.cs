@@ -49,8 +49,22 @@ public class Frog: MonoBehaviour {
 
     // -- commands --
     /// perform an action
-    public void Perform(FrogAction action) {
-        Debug.Log($"this frog is ready to {action.Label}!");
+    public void Act(FrogAction action) {
+        // reset timer
+        m_ActPct = 0.0f;
+
+        // perform action
+        if (action.Kind == FrogAction.Type.Wet) {
+            ActWet();
+        } else {
+            Debug.Log($"this frog is ready to {action.Label}!");
+        }
+    }
+
+    /// perform the wet action
+    void ActWet() {
+        Wet.Play(this);
+        m_Animator.SetTrigger("Wet");
     }
 
     /// update any periodic stats
@@ -79,6 +93,11 @@ public class Frog: MonoBehaviour {
     /// the current limit percent
     public float LimitPct {
         get => m_LimitPct;
+    }
+
+    /// if the frog is ready to act
+    public bool IsActReady {
+        get => m_ActPct >= 1.0f;
     }
 }
 

@@ -18,6 +18,9 @@ public sealed class Single: MonoBehaviour {
     [Tooltip("the shared frog")]
     [SerializeField] Frog m_Frog;
 
+    [Tooltip("the shared wet effect prefab")]
+    [SerializeField] GameObject m_Wet;
+
     // -- lifecycle --
     void Awake() {
         if (s_Get == null) {
@@ -29,6 +32,11 @@ public sealed class Single: MonoBehaviour {
     /// the shared frog
     public Frog Frog {
         get => m_Frog;
+    }
+
+    /// the shared wet effect prefab
+    public GameObject Wet {
+        get => m_Wet;
     }
 }
 
