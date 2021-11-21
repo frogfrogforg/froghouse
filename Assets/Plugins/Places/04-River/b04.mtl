@@ -1,0 +1,22 @@
+# 
+# Wavefront material file
+# Created with Kaydara FBX
+# 
+
+newmtl all
+map_Kd b04_04.png
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+illum 2
+Ns 20.000000
+Tr 1.000000
+
+newmtl w01
+map_Kd water02.png
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.000000 0.000000 0.000000
+illum 2
+Ns 20.000000
+Tr 0.516129
