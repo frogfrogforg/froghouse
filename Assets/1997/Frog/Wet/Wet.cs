@@ -20,7 +20,6 @@ public class Wet: MonoBehaviour {
     // -- commands --
     /// play the wet effect a number of times
     public static void Play(MonoBehaviour parent, int count = 5) {
-        Debug.Log($"count {count}");
         parent.StartCoroutine(PlayAsync(parent.transform, count));
     }
 
