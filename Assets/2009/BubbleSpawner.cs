@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BubbleSpawner : MonoBehaviour
+namespace Frog2009
 {
-    [SerializeField] private GameObject prefab;
 
-    public void SpawnBubble(Vector3 pos)
+    public class BubbleSpawner : MonoBehaviour
     {
-        print("spawning bubble");
-        var a = Instantiate(prefab, pos, Quaternion.identity);
+        [SerializeField] private GameObject prefab;
+
+        public void SpawnBubble(Vector3 pos)
+        {
+            var a = Instantiate(prefab, pos, Quaternion.identity, transform);
+        }
     }
 }

@@ -3,24 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityAtoms.BaseAtoms;
 
-[RequireComponent(typeof(Camera))]
-public class BottomCameraEventHandler : MonoBehaviour
+namespace Frog2009
 {
-    [SerializeField] private Vector3Event raycastPlane;
-    [SerializeField] private LayerMask planeLayer;
-    private Camera cam;
-    private void Awake()
+    [RequireComponent(typeof(Camera))]
+    public class BottomCameraEventHandler : MonoBehaviour
     {
-        cam = GetComponent<Camera>();
-    }
-
-    public void HandleBottomScreenClick(Vector2 click)
-    {
-        var ray = cam.ViewportPointToRay(new Vector3(click.x, click
-        .y, 0));
-        if (Physics.Raycast(ray, out var hit, 1000, planeLayer))
+        [SerializeField] private Vector3Event raycastPlane;
+        [SerializeField] private LayerMask planeLayer;
+        private Camera cam;
+        private void Awake()
         {
-            raycastPlane?.Raise(hit.point);
+            cam = GetComponent<Camera>();
+        }
+
+        public void HandleBottomScreenClick(Vector2 click)
+        {
+            var ray = cam.ViewportPointToRay(new Vector3(click.x, click
+            .y, 0));
+            if (Physics.Raycast(ray, out var hit, 1000, planeLayer))
+            {
+                raycastPlane?.Raise(hit.point);
+            }
         }
     }
 }
