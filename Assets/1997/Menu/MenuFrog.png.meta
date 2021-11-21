@@ -1,7 +1,61 @@
 fileFormatVersion: 2
-guid: 32a6e388bf549da4fa2914a7df050d3a
+guid: a19a03d86f04b43b38587f72e666f789
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -7888760010259029775
+    second: MenuFrog_0
+  - first:
+      213: 6313558048734226337
+    second: MenuFrog_1
+  - first:
+      213: -5847089166768503412
+    second: MenuFrog_2
+  - first:
+      213: 8498344103814273562
+    second: MenuFrog_3
+  - first:
+      213: -7643570471435784027
+    second: MenuFrog_4
+  - first:
+      213: -8661261996203692065
+    second: MenuFrog_5
+  - first:
+      213: 3945086616288210887
+    second: MenuFrog_6
+  - first:
+      213: 761680840264904651
+    second: MenuFrog_7
+  - first:
+      213: -6943957457717175912
+    second: MenuFrog_8
+  - first:
+      213: -8917759295182613816
+    second: MenuFrog_9
+  - first:
+      213: -1365415524060657596
+    second: MenuFrog_10
+  - first:
+      213: 9068001936637779088
+    second: MenuFrog_11
+  - first:
+      213: 8385358563550484622
+    second: MenuFrog_12
+  - first:
+      213: -3114863742761667053
+    second: MenuFrog_13
+  - first:
+      213: -8840042173979556063
+    second: MenuFrog_14
+  - first:
+      213: -5739973065510571285
+    second: MenuFrog_15
+  - first:
+      213: 4152008201375144133
+    second: MenuFrog_16
+  - first:
+      213: 264347390284351022
+    second: MenuFrog_17
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -20,7 +74,7 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-  isReadable: 1
+  isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -41,7 +95,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -101,11 +155,32 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: MenuFrog_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4
+        width: 48
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f0243e219e758290800000000000000
+      internalID: -7888760010259029775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: ec7f6261d4af04f9389a1442b521568f
     internalID: 0
     vertices: []
     indices: 

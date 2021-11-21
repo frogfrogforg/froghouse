@@ -24,12 +24,12 @@ public class MenuVal: MonoBehaviour {
         // build label
         var text = $"{c.Val}";
         if (m_ShowMax) {
-            text += $" / {c.Max}";
+            text += $" of {c.Max}";
         }
 
         // update ui
         m_Label.text = text;
-        m_Bar.Set(Mathf.InverseLerp(c.Max, c.Max, c.Val));
+        m_Bar.Set(Mathf.InverseLerp(c.Min, c.Max, c.Val));
     }
 }
 
