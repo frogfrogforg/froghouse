@@ -54,17 +54,30 @@ public class Frog: MonoBehaviour {
         m_ActPct = 0.0f;
 
         // perform action
-        if (action.Kind == FrogAction.Type.Wet) {
-            ActWet();
-        } else {
-            Debug.Log($"this frog is ready to {action.Label}!");
-        }
+        switch (action.Kind) {
+        case FrogAction.Type.Fight:
+            ActFight(); break;
+        case FrogAction.Type.Wet:
+            ActWet(); break;
+        case FrogAction.Type.Flea:
+            ActFlea(); break;
+        };
+    }
+
+    /// perform the wet action
+    void ActFight() {
+        m_Animator.SetTrigger("Fight");
     }
 
     /// perform the wet action
     void ActWet() {
         Wet.Play(this);
         m_Animator.SetTrigger("Wet");
+    }
+
+    /// perform the flea action
+    void ActFlea() {
+        m_Animator.SetTrigger("Flea");
     }
 
     /// update any periodic stats
