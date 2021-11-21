@@ -19,6 +19,9 @@ public class MenuActions: MonoBehaviour {
     [Tooltip("the options labels")]
     [SerializeField] MenuAction[] m_Options;
 
+    [Tooltip("the audio source")]
+    [SerializeField] AudioSource m_Audio;
+
     // -- props --
     /// the index of the selected action
     int m_Selected;
@@ -101,6 +104,8 @@ public class MenuActions: MonoBehaviour {
 
         var dir = -evt.ReadValue<Vector2>().y;
         Move((int)dir);
+
+        m_Audio.Play();
     }
 
     public void OnSubmit(InputAction.CallbackContext evt) {
