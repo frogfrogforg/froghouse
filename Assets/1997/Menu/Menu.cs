@@ -13,6 +13,9 @@ public class Menu: MonoBehaviour {
     [Tooltip("the cursor offset from the action")]
     [SerializeField] Vector2 m_CursorOffset = new Vector2(-10.0f, 0.0f);
 
+    [Tooltip("the cursor wobble amount")]
+    [SerializeField] Linear<float> m_CursorWobble = new Linear<float>(3.0f, 0.5f);
+
     // -- nodes --
     [Header("nodes")]
     [Tooltip("the root transform")]
@@ -35,6 +38,10 @@ public class Menu: MonoBehaviour {
 
     [Tooltip("the actions")]
     [SerializeField] MenuActions m_Actions;
+
+    // -- props --
+    /// the cursor offset
+    float m_CursorDelta;
 
     // -- lifecycle --
     void Start() {
@@ -72,16 +79,15 @@ public class Menu: MonoBehaviour {
         }
 
         // and the parent changed
-        if (m_Cursor.parent == action) {
-            return;
+        if (m_Cursor.parent != action) {
+            m_Cursor.SetParent(action, false);
         }
 
-        // move it into position
-        m_Cursor.SetParent(action, false);
-
+        // move into position
         var pc = Vector2.zero;
         pc += m_CursorOffset;
         pc.x -= m_Cursor.rect.width;
+        pc.x += Mathf.PingPong(Time.time * m_CursorWobble.Scale, m_CursorWobble.Value);
 
         m_Cursor.anchoredPosition = pc;
     }
