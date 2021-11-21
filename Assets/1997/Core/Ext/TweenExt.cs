@@ -7,16 +7,16 @@ namespace Frog1997 {
 /// extensions for making tweens
 public static class TweenExt {
     /// tween the lens w/ a linear value
-    public static TweenerCore<float, float, FloatOptions> TweenTo(
+    public static TweenerCore<float, float, FloatOptions> Tween(
         this Lens<float> prop,
         float src,
         Linear<float> dst
     ) {
-        return prop.TweenTo(src, dst.Value, dst.Scale);
+        return prop.Tween(src, dst.Value, dst.Scale);
     }
 
     /// tween the lens
-    public static TweenerCore<float, float, FloatOptions> TweenTo(
+    public static TweenerCore<float, float, FloatOptions> Tween(
         this Lens<float> prop,
         float src,
         float dst,

@@ -923,6 +923,10 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 585111475}
+    - target: {fileID: 1010824611441724976, guid: 4d1857a162d284fed8ee58a258f631de, type: 3}
+      propertyPath: m_Pipeline
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1010824611441724977, guid: 4d1857a162d284fed8ee58a258f631de, type: 3}
       propertyPath: m_Name
       value: Game
@@ -971,6 +975,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5868393870461674367, guid: 4d1857a162d284fed8ee58a258f631de, type: 3}
+      propertyPath: m_Wet
+      value: 
+      objectReference: {fileID: 5584946187723189777, guid: 3bb2a13770e824908a7ab18e45e72c48, type: 3}
     - target: {fileID: 5868393870461674367, guid: 4d1857a162d284fed8ee58a258f631de, type: 3}
       propertyPath: m_Frog
       value: 
@@ -1603,8 +1611,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 197.8156, y: 0}
-  m_SizeDelta: {x: 245.0256, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1110742078
 MonoBehaviour:
@@ -3552,18 +3560,6 @@ PrefabInstance:
     - target: {fileID: 2859540568150346805, guid: 8ad9a4a06b57241f092265861c295a14, type: 3}
       propertyPath: m_Name
       value: Frog
-      objectReference: {fileID: 0}
-    - target: {fileID: 6621789782044022029, guid: 8ad9a4a06b57241f092265861c295a14, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6621789782044022029, guid: 8ad9a4a06b57241f092265861c295a14, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6621789782044022029, guid: 8ad9a4a06b57241f092265861c295a14, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ad9a4a06b57241f092265861c295a14, type: 3}

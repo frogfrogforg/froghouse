@@ -47,9 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HpMax: 200
   m_MpMax: 75
-  m_ActSpeed: 5
+  m_ActSpeed: 0.33333334
   m_LimitSpeed: 0.033333335
-  m_Animator: {fileID: 0}
+  m_Animator: {fileID: 3750494145115824122}
 --- !u!1 &4356194165465432683
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,5 +222,10 @@ PrefabInstance:
 --- !u!4 &7128145261694698880 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6698240572704742112, guid: 4e8b7d152bcb14ba0855850ea1949f7b, type: 3}
+  m_PrefabInstance: {fileID: 4474515443278585696}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &3750494145115824122 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 726419412521910426, guid: 4e8b7d152bcb14ba0855850ea1949f7b, type: 3}
   m_PrefabInstance: {fileID: 4474515443278585696}
   m_PrefabAsset: {fileID: 0}
