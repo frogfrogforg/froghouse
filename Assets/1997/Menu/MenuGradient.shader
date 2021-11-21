@@ -2,6 +2,7 @@ Shader "Frog1997/MenuGradient" {
     Properties {
         _Src ("Src Color", Color) = (1.0, 1.0, 1.0, 1.0)
         _Dst ("Dst Color", Color) = (0.0, 0.0, 0.0, 1.0)
+        [Toggle] _Vertical ("Is Vertical", Float) = 0
 
         _StencilComp ("Stencil Comparison", Float) = 8
         _Stencil ("Stencil ID", Float) = 0
@@ -71,18 +72,29 @@ Shader "Frog1997/MenuGradient" {
             /// the destination color
             fixed4 _Dst;
 
+            /// if the gradient is vertical
+            float _Vertical;
+
             /// the mask rect
             float4 _ClipRect;
 
             // -- program --
             FragIn DrawVert(VertIn i) {
                 FragIn o;
+
                 UNITY_SETUP_INSTANCE_ID(i);
                 UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
+
                 o.wPos = i.pos;
                 o.vPos = UnityObjectToClipPos(o.wPos);
 
-                o.color = lerp(_Src, _Dst, i.uv.x);
+                float pct = i.uv.x;
+                if (_Vertical != 0.0f) {
+                    pct = 1.0f - i.uv.y;
+                }
+
+                o.color = lerp(_Src, _Dst, pct);
+
                 return o;
             }
 
