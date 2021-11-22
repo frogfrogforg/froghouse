@@ -7,10 +7,11 @@ namespace Frog2001
 {
     public class FrogController : MonoBehaviour
     {
+        public float moveSpeed;
 
         private Animator anim;
 
-        
+
         // Start is called before the first frame update
         void Start()
         {
@@ -21,9 +22,18 @@ namespace Frog2001
         void Update()
         {
 
+            //var position = transform.position;
+
            if (Input.GetKey(KeyCode.W)) {
                Debug.Log("move frog forward");
+               transform.position += Vector3.forward * moveSpeed * Time.deltaTime;
            }   
+
+        
+
+        
+
+
         }
     }
 }
