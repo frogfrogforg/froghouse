@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HpMax: 200
   m_MpMax: 75
-  m_ActSpeed: 0.33333334
+  m_ActSpeed: 3
   m_LimitSpeed: 0.033333335
   m_Animator: {fileID: 3750494145115824122}
 --- !u!1 &4356194165465432683
@@ -78,7 +78,7 @@ Transform:
   m_GameObject: {fileID: 4356194165465432683}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0.065, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 2859540568150346802}
   m_RootOrder: 1
