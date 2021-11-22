@@ -326,7 +326,7 @@ Animator:
   m_GameObject: {fileID: 6844299010655320514}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: fc3cfbb50ebff44be809d23d0cf00a9c, type: 3}
-  m_Controller: {fileID: 9100000, guid: 89c604aae3bbd455696fbc626340a302, type: 2}
+  m_Controller: {fileID: 9100000, guid: 82b4d96447e9c49b1a1c4aaa4ae89a1f, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -345,11 +345,11 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 3
-  m_AngularDrag: 0.05
+  m_AngularDrag: 10
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!114 &5925255388152592587
 MonoBehaviour:
@@ -365,8 +365,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   input: {fileID: 0}
   moveForce: 14
+  tankControls: 1
+  riverVelocity: 0.5
+  violenceDuration: 8
+  violenceScaleFactor: 1
+  violenceSpeedup: 1.2
+  otherFrog: {fileID: 0}
+  rend: {fileID: 0}
+  violenceText: {fileID: 0}
   dx: 0
   dy: 0
+  violence: 0
+  nGems: 1
 --- !u!135 &8992004814567014701
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -374,7 +384,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6844299010655320514}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: cccfa6eaab40c4cccb291cb8942c933a, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
