@@ -19,6 +19,7 @@ public class MenuAction: MonoBehaviour {
     [Tooltip("the label")]
     [SerializeField] TMP_Text m_Label;
 
+
     // -- lifecycle --
     void Awake() {
         Hydrate();

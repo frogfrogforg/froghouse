@@ -13,22 +13,25 @@ namespace Frog2009
         public float Damp;
         public Vector3 offset;
         [SerializeField] private Camera camReference;
+        [SerializeField] private FloatReference epsilon;
+        [SerializeField] private bool isGoingDown;
         [SerializeField] private BoolReference isDown;
-
-
         public Vector2Event screenTouchedEvent;
+
+
         [Header("Debug")]
 
         public Vector3 velocity;
 
-        public Vector3 lastHit;
+        public RaycastHit lastHit;
         public Vector3 target;
 
-        private Vector3 downOffset => isDown ? Vector3.zero : offset;
+        private Vector3 downOffset => isGoingDown ? Vector3.zero : offset;
 
+        public Vector3 initialPosition;
         private void Awake()
         {
-            lastHit = transform.position;
+            lastHit.point = transform.position;
         }
 
         // Update is called once per frame
@@ -36,17 +39,30 @@ namespace Frog2009
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                // screenTouchedEvent.Raise();
             }
 
-            isDown.Value = Input.GetKey(KeyCode.Mouse0);
+
+            isGoingDown = Input.GetKey(KeyCode.Mouse0);
             var direction = camReference.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(direction, out var hit, 1000, BottomScreen))
             {
-                lastHit = hit.point;
+                lastHit = hit;
             }
 
-            target = lastHit + downOffset;
+            target = lastHit.point + downOffset;
+
+            if (isGoingDown && Vector3.Distance(transform.position, target) < epsilon)
+            {
+                if (!isDown.Value)
+                {
+                    isDown.Value = true;
+                    screenTouchedEvent.Raise(lastHit.textureCoord);
+                }
+            }
+            else
+            {
+                isDown.Value = false;
+            }
 
             var delta = (target - transform.position);
             var accel = Spring * delta - Damp * velocity;

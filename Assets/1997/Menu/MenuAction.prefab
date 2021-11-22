@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e319afbaf6a0443fea4562fde12ffe9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Action: {fileID: 11400000, guid: 6d3c9851e325b496baf95aa2630882f8, type: 2}
+  m_Data: {fileID: 0}
   m_Root: {fileID: 6789605284820037924}
   m_Label: {fileID: 6789605284820037927}
 --- !u!222 &6789605284820037926
@@ -81,10 +81,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: fight
+  m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7d73b5eb599bc41d0bd110b9e71599f3, type: 2}
+  m_sharedMaterial: {fileID: 2473153444324315988, guid: 7d73b5eb599bc41d0bd110b9e71599f3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -108,8 +108,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 42
+  m_fontSizeBase: 42
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
