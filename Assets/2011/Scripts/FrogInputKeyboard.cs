@@ -8,12 +8,18 @@ namespace Frog2011 {
     {
         public string xAxis;
         public string yAxis;
+        public KeyCode violenceKey;
+
         public override float GetDX() {
             return Input.GetAxis(xAxis);
         }
 
         public override float GetDY() {
             return Input.GetAxis(yAxis);
+        }
+
+        public override float GetViolence() {
+            return Input.GetKey(violenceKey) ? 1f : 0f;
         }
     }
 

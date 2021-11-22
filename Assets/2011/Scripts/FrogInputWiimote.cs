@@ -36,12 +36,16 @@ namespace Frog2011 {
             return Mathf.Clamp(pitch*2.3f, -1f, 1f);
         }
 
+        public override float GetViolence() {
+            return Mathf.Clamp((forceMagnitude - 1f)/2f, 0f, 1f);
+        }
+
         void Start() {
             initial_rotation = model.rot.localRotation;
         }
 
         bool IsWiimoteAvailable() {
-            return WiimoteManager.HasWiimote() && WiimoteManager.Wiimotes.Count <= playerIndex;
+            return WiimoteManager.HasWiimote() && WiimoteManager.Wiimotes.Count > playerIndex;
         }
 
     	void Update () {
